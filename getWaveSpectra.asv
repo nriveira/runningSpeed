@@ -1,0 +1,10 @@
+for i = 1:length(runningB)
+    for clip = 1:length(runningB(i).runningClips) 
+        for n = 1:4
+            a = runningB(i).runningClips(clip).Clips{:,n};
+            clipNorm(:,n) = normalizeEEG(a);  
+        end
+        
+        runningB(i).runningClips(clip).clip_WP(:) = get_wavelet_power(clipNorm(:), 200, 50, 0.2, 5);
+    end
+end
