@@ -31,3 +31,4 @@ runningB(13) = [];
 for i = 1:length(runningB(2).runningClips)
     runningB(2).runningClips(i).Clips(:,2) = [];
 end
+
